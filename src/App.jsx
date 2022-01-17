@@ -1,5 +1,5 @@
 import data from './data';
-
+import Product from './components/Product';
 function App() {
   return (
     <div>
@@ -13,22 +13,7 @@ function App() {
       <main className="py-12 px-4 w-full">
         <div className="product-list grid grid-cols-3 gap-4 items-center">
           {data.products.map((product) => (
-            <div
-              key={product._id}
-              className="product-item p-4 bg-gray-100 rounded-md shadow"
-            >
-              <div className="product-item-content flex flex-col">
-                <a href={`product/${product._id}`}>
-                  <img src={product.image} alt="" />
-                </a>
-                <div className="font-bold mb-4 text-2xl">
-                  <a href={`product/${product._id}`}>{product.name}</a>
-                </div>
-                <div className="mb-4">{product.description}</div>
-                <div className="mb-4 font-bold text-2xl">{product.price} €</div>
-                <div>Ratings: {product.ratings}</div>
-              </div>
-            </div>
+            <Product key={product._id} product={product} />
           ))}
         </div>
       </main>

@@ -6,7 +6,8 @@ const data = {
       description: 'Some Product Description',
       image: 'someImage.jpg',
       price: 120,
-      ratings: 4,
+      rating: 2,
+      numReviews: 10,
     },
     {
       _id: 2,
@@ -14,7 +15,8 @@ const data = {
       description: 'grate product description',
       image: 'someImage.jpg',
       price: 100,
-      ratings: 5,
+      rating: 5,
+      numReviews: 12,
     },
   ],
 };
