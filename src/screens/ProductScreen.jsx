@@ -35,16 +35,21 @@ export default function ProductScreen() {
                 <div>
                   Status:
                   {product.countInStock > 0 ? (
-                    <span> Available</span>
+                    <span className="text-green-600"> Available</span>
                   ) : (
-                    <span> Not Available</span>
+                    <span className="text-red-400"> Not Available</span>
                   )}
                 </div>
               </div>
             </div>
-            <button type="submit" className="w-full p-4 bg-yellow-400 rounded">
-              Buy
-            </button>
+            {!product.countInStock > 0 ? null : (
+              <button
+                type="submit"
+                className="w-full p-4 bg-yellow-400 rounded hover:shadow"
+              >
+                Buy
+              </button>
+            )}
           </div>
         </div>
       </div>
