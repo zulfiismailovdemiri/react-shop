@@ -11,11 +11,11 @@ function App() {
         </ul>
       </header>
       <main className="py-12 px-4 w-full">
-        <div className="product-list flex items-center">
+        <div className="product-list grid grid-cols-3 gap-4 items-center">
           {data.products.map((product) => (
             <div
               key={product._id}
-              className="product-item mr-4 p-4 bg-gray-100 rounded-md shadow"
+              className="product-item p-4 bg-gray-100 rounded-md shadow"
             >
               <div className="product-item-content flex flex-col">
                 <a href={`product/${product._id}`}>
