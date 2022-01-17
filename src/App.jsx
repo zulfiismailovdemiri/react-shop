@@ -1,23 +1,25 @@
-import data from './data';
-import Product from './components/Product';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 function App() {
   return (
-    <div>
-      <header className="w-full bg-gray-600 flex items-center px-4">
-        <div className="brand font-bold text-white text-3xl">Shop</div>
-        <ul className="ml-auto flex py-12 text-white font-bold">
-          <li className="ml-4">Cart</li>
-          <li className="ml-4">Sign In</li>
-        </ul>
-      </header>
-      <main className="py-12 px-4 w-full">
-        <div className="product-list grid grid-cols-3 gap-4 items-center">
-          {data.products.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
-        </div>
-      </main>
-    </div>
+    <BrowserRouter>
+      <div>
+        <header className="w-full bg-gray-600 flex items-center px-4">
+          <div className="brand font-bold text-white text-3xl">Shop</div>
+          <ul className="ml-auto flex py-12 text-white font-bold">
+            <li className="ml-4">Cart</li>
+            <li className="ml-4">Sign In</li>
+          </ul>
+        </header>
+        <main className="py-12 px-4 w-full">
+          <Routes>
+            <Route path="/product/:id" element={<ProductScreen />}></Route>
+            <Route path="/" element={<HomeScreen />} exact></Route>
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
